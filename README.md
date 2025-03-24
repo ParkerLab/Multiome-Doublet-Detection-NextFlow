@@ -34,13 +34,13 @@ You'll also need to update the reference file paths in the `nextflow.config` fil
 Then run the pipeline. For multiome data:
 
 ```bin
-nextflow run -resume --library_info library_info.tsv --atac_barcodes /path/to/snATACseq-NextFlow/737K-arc-v1.txt --rna_barcodes /path/to/snRNAseq-NextFlow/737K-arc-v1.txt --results /path/to/results -entry multiome /path/to/Multiome-Doublet-Detection-NextFlow/main.nf
+nextflow run -resume --library_info library_info.tsv --genome hg38 --atac_barcodes /path/to/snATACseq-NextFlow/737K-arc-v1.txt --rna_barcodes /path/to/snRNAseq-NextFlow/737K-arc-v1.txt --results /path/to/results -entry multiome /path/to/Multiome-Doublet-Detection-NextFlow/main.nf
 ```
 
-Where `--atac_barcodes` and `--rna_barcodes` are the barcode whitelists for the two modalities, and `library_info.tsv` is the file noting file paths and parameters for each library. For sc/snRNA data:
+Where `--atac_barcodes` and `--rna_barcodes` are the barcode whitelists for the two modalities, `--genome` is set to the appropriate reference genome name, and `library_info.tsv` is the file noting file paths and parameters for each library. For sc/snRNA data:
 
 ```bin
-nextflow run -resume --library_info library_info.tsv --rna_barcodes /path/to/snRNAseq-NextFlow/737K-arc-v1.txt --results /path/to/results -entry rna /path/to/Multiome-Doublet-Detection-NextFlow/main.nf
+nextflow run -resume --library_info library_info.tsv --genome hg38 --rna_barcodes /path/to/snRNAseq-NextFlow/737K-arc-v1.txt --results /path/to/results -entry rna /path/to/Multiome-Doublet-Detection-NextFlow/main.nf
 ```
 
 
